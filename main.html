@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Nila!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe6f0;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav button {
+      background: #ff4081;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    nav button:hover {
+      background: #e91e63;
+    }
+    section {
+      min-height: 100vh;
+      padding: 3rem 1rem;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+    section.active {
+      display: flex !important;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .main {
+      background: url('https://images.unsplash.com/photo-1509228627159-6452d6f76c42?auto=format&fit=crop&w=800&q=80') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      display: flex;
+    }
+    .main h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #fff;
+    }
+    .main p {
+      font-size: 1.1rem;
+      margin-block: 1rem;
+    }
+    .letter, .reasons, .cake, .ending {
+      max-width: 700px;
+      background: #fff;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .letter h2, .reasons h2, .cake h2, .ending h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #e91e63;
+      text-align: center;
+    }
+    .letter p, .ending p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    .reasons ul {
+      list-style: none;
+      padding: 0;
+    }
+    .reasons li {
+      background: #ffe6f0;
+      margin-block: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .reasons li::before {
+      content: "💖 ";
+    }
+    .cake img {
+      max-width: 100%;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      color: #777;
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/07/26/audio_58fdc90df6.mp3?filename=birthday-celebration-soft-piano-116136.mp3" type="audio/mpeg">
+  </audio>
+  <canvas class="confetti"></canvas>
+  <nav>
+    <button onclick="showSection('main')">🎉 Welcome</button>
+    <button onclick="showSection('letter')">💌 Letter</button>
+    <button onclick="showSection('reasons')">🌟 Reasons</button>
+    <button onclick="showSection('cake')">🎂 Blow Candles</button>
+    <button onclick="showSection('ending')">✨ Final Words</button>
+  </nav>
+
+  <section id="main" class="main active">
+    <h1>Happy Birthday Nila 🎂</h1>
+    <p>Wishing you a magical day full of joy, beauty, and love. 💖</p>
+  </section>
+
+  <section id="letter">
+    <div class="letter">
+      <h2>To the Wonderful Nila 💖</h2>
+      <p>There’s something extraordinary about you, Nila. It’s your smile, your kind heart, and the magic in your presence. You light up every room you enter.</p>
+      <p>May this day be full of your favorite moments and unforgettable joy. You deserve all the love and happiness in the world. 🌸</p>
+    </div>
+  </section>
+
+  <section id="reasons">
+    <div class="reasons">
+      <h2>Reasons You're Amazing 🌟</h2>
+      <ul>
+        <li>You bring warmth and joy to everyone around you.</li>
+        <li>Your smile is pure sunshine.</li>
+        <li>Your kindness is boundless.</li>
+        <li>Your creativity inspires others.</li>
+        <li>You’re beautiful inside and out.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cake">
+    <div class="cake">
+      <h2>Make a Wish & Blow the Candles 🎂</h2>
+      <img src="https://media.tenor.com/MQKe5Kg8EvUAAAAC/blow-candles.gif" alt="Birthday Cake with Candles">
+    </div>
+  </section>
+
+  <section id="ending">
+    <div class="ending">
+      <h2>Final Words ✨</h2>
+      <p>Nila, you are not just special today but every single day. 💫</p>
+      <p>You inspire, you shine, you uplift. Here's to a year filled with laughter, love, and dreams coming true. Happy Birthday! 🥂</p>
+    </div>
+  </section>
+
+  <footer>Made with 💕 just for you, Nila.</footer>
+
+  <script>
+    const canvas = document.querySelector('.confetti');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let confettis = Array.from({ length: 100 }).map(() => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 6 + 4,
+      d: Math.random() * 10 + 10,
+      color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+      tilt: Math.random() * 10 - 5
+    }));
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confettis.forEach(c => {
+        ctx.beginPath();
+        ctx.fillStyle = c.color;
+        ctx.ellipse(c.x, c.y, c.r, c.r / 2, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        c.y += c.d * 0.1;
+        if (c.y > canvas.height) { c.y = 0; c.x = Math.random() * canvas.width; }
+      });
+      requestAnimationFrame(drawConfetti);
+    }
+    drawConfetti();
+
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => showSection('main'));
+  </script>
+</body>
+</html>
